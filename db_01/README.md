@@ -142,6 +142,19 @@ count(*)
 310768
 ```
 
+### 허리 둘레가 75이상이이면서 몸무게가 60이하이면서 sido가 11 이 아닌사람.
+
+```sql
+select count(*) from healthcare where waist >= 75 and weight <= 60 and not sido = 11;
+-- and not 과 != 사용 가능
+```
+
+```
+count(*)
+--------
+257429
+```
+
 ### 허리 둘레가 75이상이거나 몸무게가 60이하인 사람.
 
 ```sql
@@ -157,7 +170,7 @@ count(*)
 ### 허리 둘레가 75이상이이면서 몸무게가 60이하이면서 흡연하지 않는 사람.
 
 ```sql
-select count(*) from healthcare where waist >= 75 and weight <= 60 and smoking = 0;
+select count(*) from healthcare where waist >= 75 and weight <= 60 and smoking = NULL;
 --흡연자 칸에 0은 없고 1,2,3값만 있네
 ```
 
@@ -165,19 +178,6 @@ select count(*) from healthcare where waist >= 75 and weight <= 60 and smoking =
 count(*)
 --------
 0
-```
-
-### 허리 둘레가 75이상이이면서 몸무게가 60이하이면서 sido가 11 이 아닌사람.
-
-```sql
-select count(*) from healthcare where waist >= 75 and weight <= 60 and not sido = 11;
--- and not 과 != 사용 가능
-```
-
-```
-count(*)
---------
-257429
 ```
 
 ### 비만도를 측정하여 비만인 인원수 구하기(BMI지수가 25이상부터 비만).
